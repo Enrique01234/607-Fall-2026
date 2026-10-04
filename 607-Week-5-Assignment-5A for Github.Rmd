@@ -1,0 +1,125 @@
+---
+title: "607 Week 5 Assignment 5A"
+author: "Enrique Delamonica"
+date: "2026-10-04"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+## Introduction
+
+As usual, first, the libraries and the data are downloaded.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+url<-"https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/Delays2.csv"
+```
+
+The raw data from GitHub are converted into a data frame. 
+
+```{r}
+Flights <- read_csv(file = url, show_col_types = FALSE, progress = FALSE)
+```
+
+```{r}
+Flights
+```
+
+This data frame is not tidy as the variable, which is the number of flights, is distributed in rows (for the airline and whether the flight is classified as on time or delayed) and columns (cities).
+
+The pivot_longer function is used to tidy the data frame. A new data frame (called Pivoted) is created. Although it may not be needed to see these two data frames, it helped me to double-check the operations worked.
+
+```{r}
+Pivoted <- Flights|>
+  pivot_longer (!c(Airlines, Time), names_to = "City", values_to = "nF")
+Pivoted
+```
+
+## Calculations
+
+Initially, I estimated the different proportions in Excel. Although there is no need to create a new data frame, I wanted to make sure I kept my newly pivoted data frame intact (again, this step is not really needed, but as I was exploring different ways to group and select the observations, I wanted to be extra-cautious).  
+
+```{r}
+Pivoted2<- Pivoted
+```
+
+I started the calculations in R with the total flights by Airline.
+
+```{r}
+Pivoted3<- Pivoted2|>
+ group_by(Airlines)|>
+ mutate(Total = sum(nF))
+```
+
+Then, I calculated the total flights by Airline and city. These sums are needed to calculate the percentages.
+
+```{r}
+Pivoted4 <- Pivoted3|>
+ group_by(Airlines, Time)|>
+ mutate(Total_by_subgroup = sum(nF))
+```
+
+Once I had these new variables, I calculated the percentages for four subgroups of the data frame: Alaska flights On Time, Alaska flights Delayed, AM West flights On Time, and AM West flights Delayed. 
+
+These percentages are included in a new variable called "PropDelay_by_subgroup". As both on time and delayed flights are included, it could have been called "PropDelay_or_ontime_by_subgroup" but it would have been too long. In order to be clear, this variable includes the proportion of delayed (and on time) flights for each airline. Thus, it has only two values per airline, which for each airline add up to 1.
+
+```{r}
+ Pivoted4 <- Pivoted4 |>
+ mutate(PropDelay_by_subgroup = Total_by_subgroup /Total)
+```
+
+Afterwards, I calculated, for each airline the total flights per city.
+
+```{r}
+Pivoted4 <- Pivoted4 |>
+ group_by(Airlines, City)|>
+   mutate(Flights_by_city = sum(nF))
+```
+ Then, in in one variable ("PropDelays_by_city_by_airline"), I calculated the percentage of on time and delayed flights per city for each airline
+```{r}
+Pivoted4 <- Pivoted4 |>
+ mutate(PropDelays_by_city_by_airline = nF/Flights_by_city)
+```
+
+This file, with all the calculated columns has been converted to  a csv file. It has also been uploaded in GitHub
+
+```{r}
+write.csv (Pivoted4,"Pivoted_4.csv")
+```
+
+```{r}
+read.csv ("Pivoted_4.csv")
+```
+
+## Results
+
+The results are shown in a table. The packcge to create tables needs to be downloaded.
+
+```{r}
+ install.packages("gt")
+library(gt)
+```
+
+As I had difficulties properly selecting the columns for the tables, I created a new data frame (Pivoted 5). It includes only the columns neeed for the analysis.
+
+```{r}
+Pivoted5<- Pivoted4|>
+  select(Airlines, Time, City, PropDelay_by_subgroup, PropDelays_by_city_by_airline)
+```
+
+```{r}
+Pivoted5|>
+ gt()
+```
+In the first column of the table (PropDelay_by_subgroup), it can be seen that the percentage of delayed flights for Alaska (13.3%) is higher than for AM West (10.1%). This percentage applies to all the flights for each airline.
+
+However, in the second column (PropDelays_by_city_by_airline), the percentage of delayed flights is taken out of the flights per city. In this case, for all five cities, the percentage of delayed flights is lower for Alaska than for AM West. For instance, for San Francisco, Alaska flights were delayed 16.7% of the time while AM West flights were delayed 28.7% of the time.
+
+This discrepancy is an example of Simpson's paradox. In the work I do, for example measuring poverty across countries but also for sub-national units like provinces/states within countries, we use an expression which captures a similar effect: "Averages hide disparities".
