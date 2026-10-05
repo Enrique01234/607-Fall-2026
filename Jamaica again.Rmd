@@ -1,0 +1,63 @@
+---
+title: "Jamaica again"
+author: "Enrique Delamonica"
+date: "2026-10-04"
+output: github_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+
+## Introduction
+
+In this exercise, I try to redo some of the steps I was not able to accomplish last week. Thank you for the opportunity to do so!
+
+As usual, first, some libraries and the data are downloaded.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+url<-"https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/Jamaica%20BReg%20again%20shorter.csv"
+```
+
+## Good news
+
+The raw data from GitHub are converted into a data frame. 
+
+```{r}
+JamBReg <- read_csv(file = url, show_col_types = FALSE, progress = FALSE)
+```
+
+```{r}
+JamBReg
+```
+
+Many of my problems were fixed just by using the "raw" button in GitHub!
+
+This looks like quite a tidy data frame. Nevertheless, I tried to clean up the table a bit. First, I eliminated the lines which are separator rows. I created a new data frame (JamBReg2). As they contain NAs, I used (which is a simpler task than what Jocelyn did in the ELO case):
+
+```{r}
+JamBReg2 <- JamBReg|>
+  drop_na()
+```
+
+
+```{r}
+JamBReg2
+```
+
+Then, I tried to replace the missing values with NAs. However, I could not do so. It would have to be done in two steps, one for "(*)" and another one for "-". They do have a different meaning. The latter means there were no observations while the former means there were too few observations and a reliable value cannot be reported. For purposes of calculations, neither can be used so both can be labeled as missing values.
+
+
+## Next steps
+
+First, the lines that I have  dropped do have useful information which I will need later on because they are the axes of disparities I would have to find a way to add them. One problem is that the number of categories in each group is different. Neverthless, that information needs to be included.
+
+Secondly, I need to replace the missing values.
