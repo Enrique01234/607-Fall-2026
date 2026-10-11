@@ -1,0 +1,169 @@
+---
+title: "Project 2 Part 2"
+author: "Enrique Delamonica"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+First I download the libraries I am likley to use.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(gt)
+```
+
+## Data
+
+The original data about cost and revenue by employees in different locations are uploaded in GitHub. They are retrieved from there.
+
+```{r}
+ url <- "https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/5A_BusinessCostsRevenue.csv"
+```
+
+The working data frame is created. It is called "BizCR"
+
+```{r}
+BizCR<- read_csv(file= url, show_col_types = FALSE, progress = FALSE)
+```
+
+## Towards a tidy data frame
+
+The column names have different patterns. Thus, I label the columns in a consistent way. First I used the prefixes "rev" and "cost". However, the extra letter in the latter caused a problem when I tried to separate the month from the revenue and the cost. Consequently, I went back and I used these column names.
+
+```{r}
+colnames(BizCR)<- c("Location", "Name", "cosJAN", "revJAN","cosFEB", "revFEB", "cosMAR", "revMAR", "cosAPR", "revAPR", "cosMAY", "revMAY", "cosJUN", "revJUN")
+```
+
+```{r}
+BizCR
+```
+
+
+The columns for cost in February and March are in different units. Although I discovered this later and I had to retrace my steps. I am fixing it here (a) because it seems better to fix it here and (b) for ease of exposition. 
+
+
+```{r}
+BizCR<-BizCR|>
+   mutate(cosFEB1000 = cosFEB*1000)
+```
+
+```{r}
+BizCR<-BizCR|>
+ mutate(cosMAR1000 = cosMAR*1000)
+```
+
+```{r}
+BizCR
+```
+
+Now I have two extra columns (5x16 instead of 5x14 as above). As those columns are not needed, I delete them
+
+```{r}
+BizCR<-BizCR[-c(5,7)]
+```
+
+```{r}
+BizCR
+```
+
+Although it is not seen here, the new columns are at the end. However, their names are not consistent. I rename them and create a new data frame (BizCR2).
+
+```{r}
+BizCR2<-BizCR|>
+ rename(cosFEB = cosFEB1000, cosMAR = cosMAR1000)
+
+```
+
+
+```{r}
+BizCR2
+```
+
+Now I have a consistent data frame. I can tidy it.
+
+```{r}
+BizPivoted<- BizCR2|>
+pivot_longer (!c(Location, Name), names_to = "M", values_to = "Money")
+```
+
+
+```{r}
+BizPivoted
+```
+
+However, it is not fully tidy. While the last column includes all the monetary values, some are costs and some are revenues.
+
+In a new data frame (BizPivoted2) I create two columns separating the information in column "M" between the month and the type of monetary value (i.e. whether they are revenue or cost). It is at this stage that having only three letters (either "cos" or "rev") before the month is very important.
+
+
+```{r}
+BizPivoted2<- BizPivoted|>
+ separate(M, c("CR", "Month"), 3)
+```
+
+```{r}
+BizPivoted2
+```
+
+In order to have each variable in a column and for each column to be a variable, I wide-pivot and create a new data frame (BizPivoted3).
+
+```{r}
+BizPivoted3<- BizPivoted2|>
+  pivot_wider(names_from = CR, values_from = Money)
+```
+
+```{r}
+BizPivoted3
+```
+
+This is a tidy data frame.
+
+## The tidy data frame can be used
+
+Now I can find the month with the highest revenue per employee.
+
+```{r}
+BizPivoted3|>
+ group_by(Name)|>
+ slice_max(rev)
+```
+
+There seems to be something odd about Bobby's results. The results for Bobby are orders of magnitude superior to any other performance. I suspect an error in data entry. 
+
+
+I can also calculate profits (Revenue minus cost) in a new data frame. The new variable could have been simply added to the current data frame too.
+
+```{r}
+BizPivoted4<- BizPivoted3|>
+  mutate(profit = rev-cos)
+```
+
+
+
+```{r}
+BizPivoted4
+```
+
+
+```{r}
+BizPivoted4|>
+   slice_min(profit)
+```
+
+As I was not expecting losses, I want to explore who and when experienced losses.
+
+```{r}
+arrange(BizPivoted4, profit)
+```
+
+In half a year, Denise had two months of losses. They are the largest ones: three and two times larger than the next one, which corresponds to Ethan. Ethan also had two out of six months experiencing losses. 
+
+Of the six results with losses, three happened in April. They affected Denise and Ethan as well as Emma. However, Emma's were much lower.

@@ -1,0 +1,158 @@
+---
+title: "Project 2 Part 3"
+author: "Enrique Delamonica"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+First I download the libraries I expect to use.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(gt)
+```
+
+## Data
+
+For this exercise I work with data about Life Expectancy from the World Bank. The data are in uploaded in GitHub. I retrieve them from there.
+
+```{r}
+url <- "https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/API_SP.DYN.LE00.IN_DS2_en_excel_v2_461099%20without%20metadata.csv"
+```
+
+Given the original data has three lines which are not needed for the exercise (e.g.the date of the latest update by the World Bank), they are skipped 
+
+
+```{r}
+lifex <- read_csv(file= url, show_col_types = FALSE, progress = FALSE, skip = 3)
+```
+
+```{r}
+lifex
+```
+
+There are two columns about the indicator (the name and the code) which are the same for all rows (countries). In order to save space and facilitate the manipulation of the file, I delete them and create a new data frame (lifex2). I use the column numbers because R was not recognizing the columns by their name.
+
+```{r}
+lifex2<- lifex[-c(3,4)]
+```
+
+
+```{r}
+lifex2
+```
+
+## Towards a tidy data frame
+
+In the first two rows we can see that the  column "Country Names" includes country groupings (e.g. Africa, Eastern and Southern). As they are not countries, I do not want to include them in the data frame, nor do I want to delete them by hand.
+
+Fortunately, the World Bank provides the metadata. In that worksheet (I have saved them separately in GitHub) the country groupings have no information about the region. Some of them (like in the example in the previous paragraph) are sub-regions. However, in other cases (such as low income countries) they span more than one region.
+
+I get the data from GitHub and create a new data frame (lifexMETAD).
+
+```{r}
+url<- "https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/Lifex%20Metadata.csv"
+```
+
+```{r}
+lifexMETAD<- read_csv(file= url, show_col_types = FALSE, progress = FALSE)
+```
+
+```{r}
+lifexMETAD
+```
+
+Clearly, the rows which are not countries have "NA" in the Region column.
+
+I (left)merge the two files because I plan to use these "NAs" to filter out the rows which are not countries. The merged data frame is called "lifex3"
+
+
+```{r}
+lifex3<- lifex2|>
+  left_join(lifexMETAD)
+```
+
+R automatically selected "Country Code" as the key variable to merge the files.
+
+```{r}
+lifex3
+```
+
+Comparing with the lifex 2 tibble, it can be seen a new column has been added (from 68 to 69 columns).
+
+
+In order to make sure I can filter and keep the countries, I explore which rows are the ones which have "NAs" in the Region column. I use a new data frame: lifextry.
+
+```{r}
+lifextry<-lifex3|>
+     filter(is.na(Region))
+```
+
+```{r}
+lifextry
+```
+
+As I cannot see all of the rows, I add the instruction to see all 48 of them.
+
+```{r}
+print (lifextry, n = 48)
+```
+
+None of the rows are a country. Then, I proceed to filter them out and create a new data frame (lifex4).
+
+
+```{r}
+lifex4<-lifex3|>
+ filter_out(is.na(Region))
+```
+
+
+```{r}
+lifex4
+```
+
+Lifex4 has 217 and lifex 3 has 265. The difference of 48 is the number of rows in lifextry. I have laso inspected visually the 217 rows but it is too long to print here. They are all countries or semi-autonomus areas (like Aruba).
+
+Lifex4 is the data frame to tidy. A new data frame is created with long-pivot and called "pivlifex". 
+
+```{r}
+pivlifex<- lifex4|>
+pivot_longer (!c(1,2, Region), names_to = "Year", values_to = "Life Expectancy")
+```
+
+```{r}
+pivlifex
+```
+
+Now pivlifex is a tidy data frame. Each column is a variable and each variable is a column. Also, each observation is a row and each row is an observation while each value is a cell and each cell is a single value.
+
+## Working with the tidy data frame
+
+Given the Region category is included, I explore the top performer (highest life expectancy) per region. I do this irrespective of the year, assuming the most recent year with data would show the highest value.
+
+
+```{r}
+pivlifex|>
+ group_by(Region)|>
+ top_n(1)
+```
+
+
+Then, I do the same for the countries with the lowest life expectancy. I expect these worst performances to be the ones in 1960.
+
+
+```{r}
+pivlifex|>
+ group_by(Region)|>
+ top_n(-1)
+```
+
+The highest life expectancy is actually observed in the most recent years, as expected. However, some of the lowest ones are recorded in the 1970s and 1980s. This may be the result of internal wars or long periods of economic decline. 

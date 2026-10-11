@@ -1,0 +1,136 @@
+---
+title: "Project 2 Part 1 Tuition"
+author: "Enrique Delamonica"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+First I download the libraries I am likely to use:
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(gt)
+```
+
+## Data
+
+The data for this exercise are about tuition cost in the U.S.by state. They are uploaded in GitHub, from where they are retrieved.
+
+```{r}
+url <- "https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/us_avg_tuition(Table%205).csv"
+```
+
+A data frame, "Tuition" is created.
+
+```{r}
+Tuition <- read_csv(file= url, show_col_types = FALSE, progress = FALSE)
+```
+
+## Toward a tidy data frame
+
+Then it is long-pivoted to ensure (a) each variable is a column and each column is a variable, (b) each observation is a row and each row is an observation, and (c) each value is a cell and each cell is a single value.
+
+```{r}
+Pivoted<- Tuition|>
+pivot_longer (!c(State), names_to = "Year", values_to = "TuitionCost")
+```
+
+
+```{r}
+Pivoted
+```
+
+However, in the original data set, the tuition cost includes the dollar sign("$"). I separate it from the rest of the number, creating two columns in a new data frame called "Pivoted2".
+
+```{r}
+Pivoted2<- Pivoted|>
+ separate(TuitionCost, c("unit", "cost"), 1)
+```
+
+```{r}
+Pivoted2
+```
+
+One additional point, which I discovered when I tried to do some calculations. The column "cost", in spite of having being separated from the dollar sign, is still not considered a number.
+
+In order to fix this issue, I write the data frame into a csv file.
+
+```{r}
+write.csv(Pivoted2, "pivoted2.csv")
+```
+
+The new csv file is uploaded in GitHub. Then I bring it back here.
+
+```{r}
+url <- "https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/pivoted2.csv"
+```
+
+A new data frame, "Pivoted3" is created.
+
+```{r}
+Pivoted3 <- read_csv(file= url, show_col_types = FALSE, progress = FALSE)
+```
+
+```{r}
+Pivoted3
+```
+
+
+Now the cost column is a number and the data frame is tidy. 
+
+
+## Using the tidy data frame
+
+I can explore the top two states with highest tuition cost per year.
+
+```{r}
+Pivoted3|>
+  group_by(Year)|>
+  slice_max(cost, n=2)
+```
+
+The states that are consistently the most expensive ones in terms of tuition are: 
+
+New Hamspshire
+
+New Jersey
+
+Pennsylvania
+
+Vermont
+
+Vermont was the top one until the academic year 2010-11. Since 2011-12  the most expensive tuition cost has been New Hanpshire.
+
+I can also explore the top two states with lowest tuition cost per year.
+
+```{r}
+Pivoted3|>
+  group_by(Year)|>
+  slice_min(cost, n=2)
+```
+
+Several states appear in the list:
+
+Alaska
+
+Florida
+
+Louisiana
+
+Montana
+
+Nevada
+
+Utah
+
+Wyoming
+
+While Montana and Utah appear only once, the other countries appear several times. For instance, both Florida and Nevada appear twice as the states with the lowest tuition cost in the 2004-05 to 2007-08 period. However, since then, Wyoming has been consistently the state with the lowest cost.
