@@ -1,0 +1,20 @@
+
+
+{Books}
+{"Title": "The Odd Couple",
+"Author": "Neil Simon", 
+"Year": "1966",
+"City": "New York", 
+"Publisher": "Random House"}
+
+{"Title":"The Man who came to Dinner",
+"Author": "George Kaufman and Moss Hart",
+"Year": "1939", 
+"City": "New York",
+"Publisher": "Random House"}
+
+{"The Front Page",
+"Author": "Ben Hecht and Charles MacArthur",
+"Year": "1928",
+"City": "New York",
+"Publisher": "Covici-Friede"}
