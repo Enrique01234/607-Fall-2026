@@ -1,0 +1,1182 @@
+{
+  "size": 25,
+  "totalElements": 4053,
+  "totalPages": 163,
+  "pageNumber": 1,
+  "attributes": [
+    {
+      "id": "Nature",
+      "codes": [
+        {
+          "code": "C",
+          "description": "Country data",
+          "sdmx": "C"
+        },
+        {
+          "code": "CA",
+          "description": "Country adjusted data",
+          "sdmx": "CA"
+        },
+        {
+          "code": "E",
+          "description": "Estimated data",
+          "sdmx": "E"
+        },
+        {
+          "code": "G",
+          "description": "Global monitoring data",
+          "sdmx": "G"
+        },
+        {
+          "code": "M",
+          "description": "Modeled data",
+          "sdmx": "M"
+        },
+        {
+          "code": "N",
+          "description": "Non-relevant",
+          "sdmx": "N"
+        },
+        {
+          "code": "NA",
+          "description": "Data nature not available",
+          "sdmx": "_X"
+        }
+      ]
+    },
+    {
+      "id": "Units",
+      "codes": [
+        {
+          "code": "PERCENT",
+          "description": "Percentage",
+          "sdmx": "PT"
+        }
+      ]
+    },
+    {
+      "id": "Observation Status",
+      "codes": [
+        {
+          "code": "A",
+          "description": "Normal value",
+          "sdmx": "A"
+        },
+        {
+          "code": "B",
+          "description": "Time series break",
+          "sdmx": "B"
+        }
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "Age",
+      "codes": [
+        {
+          "code": "<15Y",
+          "description": "under 15 years old",
+          "sdmx": "Y0T14"
+        },
+        {
+          "code": "<18Y",
+          "description": "under 18 years old",
+          "sdmx": "Y0T17"
+        },
+        {
+          "code": "ALLAGE",
+          "description": "All age ranges or no breaks by age",
+          "sdmx": "_T"
+        },
+        {
+          "code": "5-17",
+          "description": "5 to 17 years old",
+          "sdmx": "Y5T17"
+        },
+        {
+          "code": "<10Y",
+          "description": "under 10 years old",
+          "sdmx": "Y0T9"
+        },
+        {
+          "code": "<6Y",
+          "description": "under 6 years old",
+          "sdmx": "Y0T5"
+        },
+        {
+          "code": "<16Y",
+          "description": "under 16 years old",
+          "sdmx": "Y0T15"
+        },
+        {
+          "code": "<7Y",
+          "description": "under 6 years old",
+          "sdmx": "Y0T6"
+        }
+      ]
+    },
+    {
+      "id": "Location",
+      "codes": [
+        {
+          "code": "RURAL",
+          "description": "Rural",
+          "sdmx": "R"
+        },
+        {
+          "code": "ALLAREA",
+          "description": "All areas",
+          "sdmx": "_T"
+        },
+        {
+          "code": "URBAN",
+          "description": "Urban",
+          "sdmx": "U"
+        }
+      ]
+    },
+    {
+      "id": "Sex",
+      "codes": [
+        {
+          "code": "FEMALE",
+          "description": "Female",
+          "sdmx": "F"
+        },
+        {
+          "code": "MALE",
+          "description": "Male",
+          "sdmx": "M"
+        },
+        {
+          "code": "BOTHSEX",
+          "description": "Both sexes",
+          "sdmx": "_T"
+        }
+      ]
+    },
+    {
+      "id": "Reporting Type",
+      "codes": [
+        {
+          "code": "N",
+          "description": "National",
+          "sdmx": "N"
+        },
+        {
+          "code": "G",
+          "description": "Global",
+          "sdmx": "G"
+        },
+        {
+          "code": "R",
+          "description": "Regional",
+          "sdmx": "R"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2016,
+      "value": "18.1",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source:  Afghanistan Living Conditions Survey (ALCS) 2016–17; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Overall number of indicators: 18; Official publication: Afghanistan Multidimensional Poverty Index 2016-2017"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "URBAN",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2016,
+      "value": "56.4",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source:  Afghanistan Living Conditions Survey (ALCS) 2016–17; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Overall number of indicators: 18; Official publication: Afghanistan Multidimensional Poverty Index 2016-2017"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "<18Y",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2016,
+      "value": "51.7",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source:  Afghanistan Living Conditions Survey (ALCS) 2016–17; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Overall number of indicators: 18; Official publication: Afghanistan Multidimensional Poverty Index 2016-2017"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2016,
+      "value": "61.1",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source:  Afghanistan Living Conditions Survey (ALCS) 2016–17; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Overall number of indicators: 18; Official publication: Afghanistan Multidimensional Poverty Index 2016-2017"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "RURAL",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2020,
+      "value": "53.8",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: Income & Expenditure and labour force surveys 2020; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Official publication: Income and Expenditure & Labor Force Survey 2019-2020"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "<18Y",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2020,
+      "value": "49.4",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: Income & Expenditure and labour force surveys 2020; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Official publication: Income and Expenditure & Labor Force Survey 2019-2020"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2020,
+      "value": "21.8",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: Income & Expenditure and labour force surveys 2020; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Official publication: Income and Expenditure & Labor Force Survey 2019-2020"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "URBAN",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "4",
+      "geoAreaName": "Afghanistan",
+      "timePeriodStart": 2020,
+      "value": "56.5",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "National Statistics and Information Authority (NSIA)",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: Income & Expenditure and labour force surveys 2020; Topics included: Education, Health, Infrastructure services, dwelling characteristics, employment, shocks; Official publication: Income and Expenditure & Labor Force Survey 2019-2020"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "RURAL",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2017,
+      "value": "52.3",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "FEMALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2017,
+      "value": "51.8",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2017,
+      "value": "54.8",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G",
+        "Age": "<16Y"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2017,
+      "value": "51.3",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "MALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2018,
+      "value": "49.0",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2018,
+      "value": "51.7",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G",
+        "Age": "<16Y"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2018,
+      "value": "48.0",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "MALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2018,
+      "value": "49.9",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "FEMALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2019,
+      "value": "45.5",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "MALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2019,
+      "value": "46.9",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "FEMALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2019,
+      "value": "48.7",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G",
+        "Age": "<16Y"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2019,
+      "value": "46.2",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2020,
+      "value": "48.1",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G",
+        "Age": "<16Y"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2020,
+      "value": "42.3",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "MALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2020,
+      "value": "44.5",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "FEMALE",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2020,
+      "value": "43.4",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table?lang=en\n\nhttps://ec.europa.eu/eurostat/documents/3217494/9940483/KS-02-19-165-EN-N.pdf; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php/EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_Europe_2020_target_on_poverty_and_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "A"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "BOTHSEX",
+        "Reporting Type": "G"
+      }
+    },
+    {
+      "goal": [
+        "1"
+      ],
+      "target": [
+        "1.2"
+      ],
+      "indicator": [
+        "1.2.2"
+      ],
+      "series": "SD_MDP_MUHC",
+      "seriesDescription": "Proportion of population living in multidimensional poverty (%)",
+      "seriesCount": "3391",
+      "geoAreaCode": "8",
+      "geoAreaName": "Albania",
+      "timePeriodStart": 2021,
+      "value": "48.7",
+      "valueType": "Float",
+      "time_detail": null,
+      "timeCoverage": null,
+      "upperBound": null,
+      "lowerBound": null,
+      "basePeriod": null,
+      "source": "EUROSTAT",
+      "geoInfoUrl": null,
+      "footnotes": [
+        "Data source: EUROPEAN UNION STATISTICS ON INCOME AND LIVING CONDITIONS; Topics included: Income, material and social deprivation and work intensity; Overall number of indicators: 3; Official publication: https://ec.europa.eu/eurostat/databrowser/view/ILC_PEPS01N/default/table?lang=en&category=livcon.ilc.ilc_pe.ilc_peps; Methodological documentation: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology_-_people_at_risk_of_poverty_or_social_exclusion"
+      ],
+      "attributes": {
+        "Nature": "C",
+        "Units": "PERCENT",
+        "Observation Status": "B"
+      },
+      "dimensions": {
+        "Age": "ALLAGE",
+        "Location": "ALLAREA",
+        "Sex": "FEMALE",
+        "Reporting Type": "G"
+      }
+    }
+  ]
+}
