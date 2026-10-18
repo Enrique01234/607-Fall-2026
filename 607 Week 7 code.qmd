@@ -1,0 +1,103 @@
+---
+title: "607 Week 7: XXth Century  American Plays"
+name: "Enrique Delamonica"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Besides the usual and useful tidyverse library, three additional libraries are downloaded. They are: arsenal, jsonlite, and rvest. I have discovered these in the various sources I explored, including the textbook "R for Data Science" textbook.
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(jsonlite)
+library(arsenal)
+```
+
+### The basic data
+
+For this exercise I have retrieved information about three American plays from the XXth century which have been made into movies. The information was retrieved from the CUNY library system (<https://guides.newman.baruch.cuny.edu/SPS/#).>
+
+Information about the author(s), year and city of publication, and the publisher of each book was recorded both in html and JSON format. Both files have been uploaded in GitHub, from where they were retrieved.
+
+I have started with the html file:
+
+```{r}
+bookshtml<- read_html("https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/book3.html")
+```
+
+```{r}
+bookshtml
+```
+
+Then, the same is done with the JSON file. I have found the "simplifyVector = TRUE" in: <https://carpentry.library.ucsb.edu/2022-02-15-ucsb-R-online/06-json/>
+
+```{r}
+booksJSON<- read_json("https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/books.json" , simplifyVector = TRUE)
+```
+
+```{r}
+booksJSON
+```
+
+If I did not use the raw version from GitHub, I could not read the JSON file in R. Although both the regular and raw versions seemed to work for the hmtl file, I have used the raw version for both files.
+
+## From getting the data to getting a data frame
+
+It can be seen above that adding "simplifyVector = TRUE" to the read_json command allows converting the data directly into a data frame when reading the JSON file. However, this is not the case with the html file. At least, I have not seen such a command.
+
+Thus, I have looked for the elements in the html file,
+
+```{r}
+section <- bookshtml |> html_elements("section")
+```
+
+```{r}
+section
+```
+
+As this file has three nodes, it seems to have the structure needed to be converted into a data frame. I had to do this step several times, as I was getting strings with 0 nodes. In such cases, I did not manage to create proper data frames. Also, as I proceeded with the comparison with the JSON file (please, see below), I realized the names I was using for the columns did not match the ones in the JSON file. This involved looking at and renaming the various elements (e.g, the author, the year of publication, etc.) several times in the original html file.
+
+Following the example in the textbook, all these elements were explored one by one. In the process I also realized some were not properly read in R from the html file. It was puzzling as I could see all elements when I opened the file in the browser. However, R refused to take them (the issue was corrected when I used straight quotation marks instead of curly ones in the label of the span class). Then, I used them all together in one command to create a tibble. The tibble has been used to generate the data frame, also in the same command.
+
+```{r}
+datahtml <- tibble(Title = section |> html_elements("h2")|> html_text2(),
+ Author = section |> html_elements(".Author")|> html_text2(),
+ Year = section |> html_elements(".Year")|> html_text2(),
+ City = section |> html_elements(".City")|> html_text2(),
+ Publisher = section|> html_elements('.Publisher')|> html_text2())
+```
+
+```{r}
+datahtml
+```
+
+## Comparing the two data frames
+
+Now, with two data frames in hand, one constructed from the html file and the other one from the JSON file, I have compared them. By default, the comparison is carried out row-by-row (according to what I have found in: <https://cran.r-project.org/web/packages/arsenal/vignettes/comparedf.html).>
+
+```{r}
+comparedf(datahtml, booksJSON)
+```
+
+The five variables (columns in the data frame) coincide. Also, the values, along each of the three rows, do coincide.
+
+More details can be found with the following command (which I have found in: [https://cran.r-project.org/web/packages/arsenal/vignettes/comparedf.html](https://cran.r-project.org/web/packages/arsenal/vignettes/comparedf.html):) ):
+
+```{r}
+summary(comparedf(datahtml, booksJSON))
+```
+
+As I have not changed the default setting to compare by any specific variable, there are no "by" variables, they are all "non-by" variables. This was explained better in <https://mayoverse.github.io/arsenal/articles/comparedf.html> than the original website where I had found the comparedf command.
+
+## Two further points
+
+I tried to create two different entries for the authors in the JSON file (following the explanation to use square brackets to include an array instead of a value in the key-value pair I have found in: https://www.freecodecamp.org/news/what-is-json-a-json-file-example/ ). However, it did not work. Also, I could not find a way to do the same thing in html.
+
+While everything seems to match, it is intriguing that only four, not all five, variables were compared. The Author variable was not compared but it is not clear to me why. It could be related to the issue in the previous paragraph. I have tried to explore (not using generative AI) but I could not find an explanation. Nevertheless, I would add, I would not have been able to realize this without the summary command.
