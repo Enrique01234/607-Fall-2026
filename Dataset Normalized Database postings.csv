@@ -1,0 +1,227 @@
+job_id,company_id,title,department,location,city,region,country_code,workplace_type,employment_type,seniority
+01439a71a45533a9,ashby:niantic-spatial,"AI Engineer, Computer Vision",Engineering,"San Francisco, CA",San Francisco,California,US,hybrid,full-time,Unknown
+02d0c44b97b2c5fd,workday:mgmresorts:mgmcareers,Principal Commercial Data Engineer,,"Home Office - US, TX",,,US,remote,full-time,Unknown
+02d6d7c9b9cd038f,greenhouse:adyen,"Machine Learning Engineering Manager, Credit & Underwriting",Development,San Francisco,,,,Unknown,Unknown,Unknown
+03c41ee5089d1693,ashby:batoncorporation,Machine Learning Engineer ($400k - $600k salary),Engineering,New York,New York,New York,,onsite,full-time,Unknown
+053446e63e265657,greenhouse:engineersgate,Quantitative Researcher,RAGA,New York,,,,Unknown,Unknown,Unknown
+05dca00806c528ac,ashby:norm-ai,Senior Analytics Engineer,Data,New York City,New York City,New York,US,hybrid,full-time,Unknown
+05f522b1216b0ac5,workday:harbourvest:hvp,"Senior Associate, Quantitative Researcher, Private Equity Co-Investments",,Boston,,,US,Unknown,full-time,Unknown
+065bd621f2dcc779,greenhouse:gleanwork,Senior/Staff Applied Scientist,Data,"San Francisco, CA",,,US,Unknown,Unknown,Unknown
+066a1df7daac45b9,ashby:wayve,Senior Data Scientist,AV Engineering,"Sunnyvale, California USA",,,,Unknown,full-time,Unknown
+069703904d4ce57a,workday:vertexinc:vertexinc,Principal AI Engineer,,Remote USA,,,US,remote,full-time,Unknown
+08efbab51c900d88,ashby:hirehangar,Senior AI Platform Engineer,Clients,Ukraine - Kyiv,Kyiv,Kyiv,UA,Unknown,contract,Unknown
+0970ffec34788d48,ashby:shepherd,Analytics Engineer,EPD,San Francisco,San Francisco,California,US,onsite,full-time,Unknown
+097ad412a6f0e060,workday:assurant:assurant_careers,Senior Real Estate & Facilities Data Analyst,,Georgia Virtual,,,US,Unknown,full-time,Unknown
+09e85656429d708e,greenhouse:aidashinc,Staff MLOps Engineer,R&D,"Palo Alto, California, United States",,,US,Unknown,Unknown,Unknown
+0a146a905820b1db,smartrecruiters:wise,Senior Product Analytics Manager - Wise Business,,"London, United Kingdom",London,,GB,hybrid,full-time,senior
+0abecf91abbbc6e8,ashby:openart,Growth Data Engineer,Data Team,"San Carlos, California, USA",San Carlos,California,US,hybrid,full-time,Unknown
+0c210253d1d555a1,greenhouse:fundraiseup,Head Of Data,Finance,USA (EST and CST) - Remote,,,,remote,Unknown,Unknown
+0cd66e93a43be9a4,ashby:altura,Senior AI Engineer,Engineering,Amsterdam HQ,Amsterdam,North-Holland,NL,hybrid,full-time,Unknown
+0f2d12e532d1cd51,workday:nvidia:nvidiaexternalcareersite,"Senior Machine Learning Engineer, Cosmos Engineering",,"US, CA, Santa Clara",,,US,Unknown,full-time,Unknown
+1038c12002f0586b,ashby:clera,"Founding Engineer, Computer Vision & Robotics",Engineering,San Francisco,San Francisco,California,US,onsite,full-time,Unknown
+118b48f0ffe9d4b1,greenhouse:octanelending,"Analyst, Business Intelligence",Strategy,Remote,,,,remote,Unknown,Unknown
+129bbf461e623c6a,greenhouse:greenbrookmedical,Director of Data Engineering and Analytics,Population Health,"New York City, NY",,,US,Unknown,Unknown,Unknown
+1325dbef0240100b,breezy:talent-first,Fraud Data Analyst,,"Kyiv, UA",Kyiv,,UA,remote,full-time,Unknown
+13d98d67ad7c8ad6,smartrecruiters:jacobsdouweegberts,"Stage | Business Data Analyst H/F - L’Or, Senseo, Tassimo",Sales,"Paris, IDF, France",Paris,IDF,FR,hybrid,full-time,senior
+15888cc39885c9ea,breezy:ninjaholdings,"Senior Manager, Data Engineering",,"Chicago, IL",Chicago,Illinois,US,remote,full-time,Unknown
+159c6159b3ca09d6,greenhouse:twitch,Applied Scientist,Community Growth,"San Francisco, CA",,,US,Unknown,Unknown,Unknown
+172fad7e9aee36ff,breezy:activate-group-limited,Data and BI Analyst,IT,"Halifax, GB",Halifax,,GB,remote,full-time,Unknown
+1969e54cb76ff282,greenhouse:checkr,Senior Machine Learning Engineer,Engineering,"San Francisco, California, United States",,,US,Unknown,Unknown,Unknown
+19c244c7854c5783,greenhouse:upshop,Data Scientist,Engineering,Mississauga,,,,Unknown,Unknown,Unknown
+19e1abf3c3aa16d5,greenhouse:contactmonkey,Applied AI Engineer,Engineering,Toronto,,,,Unknown,Unknown,Unknown
+1a362a23240f3017,lever:sportalliance,AI-First Analytics Engineer (m/f/d),Finion Capital,Remote (Germany),,,DE,remote,full-time,Unknown
+1fbbc86d055cb00f,ashby:solace,Data Scientist,Data,United States,,,US,remote,full-time,Unknown
+21a64c0cd4091b84,workday:bcbsnc:bcbsnc,BI Analyst,,Hybrid Flex - Durham,,,US,hybrid,full-time,Unknown
+23893aa816984acf,greenhouse:momentumfinancialservicesgroup,Senior Data Scientist,Risk and Analytics,"Toronto, Canada",,,CA,Unknown,Unknown,Unknown
+248398accfc7d66a,ashby:candidhealth,AI/ML Engineer (Senior),Engineering,San Francisco,San Francisco,California,US,onsite,full-time,Unknown
+249f58373fe158bd,greenhouse:optiverus,Data Operations Engineer,Software,"Chicago, Illinois, United States",,,US,Unknown,Unknown,Unknown
+2adfca16da82e153,greenhouse:definiumtherapeutics,"Manager, Data & Analytics",17 - Commercial,Remote,,,,remote,Unknown,Unknown
+2bd840c84d6a5a9f,workday:onedigital:onedigital,Director of Analytics - Remote,,Remote,,,US,remote,full-time,Unknown
+2c9fbe83a2430796,greenhouse:samsara,Data Engineer,Platform,Remote - US,,,,remote,Unknown,Unknown
+2cbb0d01ff0bfb16,greenhouse:figure,Senior Data Analyst,Data Analytics,Remote,,,,remote,Unknown,Unknown
+2cddb003684d9e51,ashby:current-advisors,Senior Data Engineer,Current,Remote,Aventura,FL,US,remote,full-time,Unknown
+2e1059e5982a92cc,workday:google:gocjobs,Data Engineer Specialist - Ads Campaign Operations - Gamma (Hybrid) (For Pooling),,US-CHI-CARP210,,,US,hybrid,full-time,Unknown
+2ee1ceaf0553d4de,greenhouse:flix,Data Engineer,IT & Engineering,Warsaw,,,,Unknown,full-time,Unknown
+2f94bfb594e5e844,greenhouse:malbon,Data Analyst / Engineer,Digital,"Santa Monica, CA",,,US,Unknown,Unknown,Unknown
+310b8f5d7b1407da,greenhouse:innodatainc,Gen AI Engineer,ICL- (Engineering) & Solutions,Remote - Canada,,,CA,remote,Unknown,Unknown
+31b797a310aac1a0,greenhouse:drweng,Quantitative Researcher - Delta One,FICC Options Research,Chicago,,,,Unknown,full-time,Unknown
+33227a9cd9fb27cd,teamtailor:vismacc,Analytics Engineer,,"Vilnius, Lithuania",,,LT,onsite,Unknown,Unknown
+3390bee578f94d0a,ashby:meridianlink,"Data Analyst, Reporting",Research & Development,US Remote,,,US,remote,full-time,Unknown
+33dad7ba8902b921,workday:abinbev:can,Data Scientist - Analytics Solutions & Reporting,,"Toronto, Ontario",,,CA,Unknown,full-time,Unknown
+3549d90482c297f8,ashby:chartis,"Consultant, Analytics & Insights, Revenue Cycle",Strategic Intelligence & Technology (CCSIT),Remote,,,US,remote,full-time,Unknown
+358087b9ec0512dd,ashby:kled-ai,"Research Scientist, Benchmarks & Evals",Engineering,United States,,California,US,remote,full-time,Unknown
+381e1392b9c9efaa,greenhouse:datacamp,Learning Solution Architect - Data Engineering,Marketing,United States,,,US,Unknown,Unknown,Unknown
+39551d1b0c948e6b,workday:aspenvalleyhealth:avh,Informatics Analyst - IT Business Intelligence - Full time,,"Aspen, CO",,,US,hybrid,full-time,Unknown
+3a6da4e1192b7fac,lever:palantir,Data Engineer - Talent Acquisition Operations,,"New York, NY",,,US,hybrid,full-time,Unknown
+3a791793a640643b,teamtailor:luminorbank,Data Analyst,Technology,"R?ga, Latvia",R?ga,,LV,hybrid,Unknown,Unknown
+3bbdd6a4c38a6d4e,workday:beigene:beigene,"Director, Advanced Analytics and Data Science - Innovation",,Remote (US),,,US,remote,full-time,Unknown
+3c0b389c4ea911a7,greenhouse:latitude,Senior Engineering Manager - Scalable Machine Learning,Intelligent Systems,"Dearborn, Michigan, United States, Palo Alto, California, United States, Pittsburgh, PA, United States, Remote",,,,remote,Unknown,Unknown
+3c596a3a9098395f,ashby:socure,"Staff Data Scientist, DocV",AI and Data,California - Remote,Sacramento,California,US,hybrid,full-time,Unknown
+3e2b4adf53a63c4a,ashby:gallatin,AI Software Engineer,Engineering,"El Segundo, CA",El Segundo,California,US,onsite,full-time,Unknown
+41326bfdb98d545d,ashby:solace,Data Engineer,Data,United States,,,US,remote,full-time,Unknown
+418d464d54a60ceb,greenhouse:dynetherapeutics,"Senior Director, Medical Affairs Biostatistics",1220GL - Data Analytics,"Waltham, MA",,,US,Unknown,Unknown,Unknown
+41943b3ac35c8ceb,greenhouse:themichaeljfoxfoundation,Lead Data Systems Engineer,Technology,United States,,,US,Unknown,Unknown,Unknown
+41b0748741753fc8,workday:rakuten:rakutenadvertising,"Director, Advanced Analytics",,"Chicago, Illinois",,,US,Unknown,full-time,Unknown
+4301b26092e02129,greenhouse:thoughtworksreferral,Senior Data Engineer,1Y_TWUSA SL DATA,"Raleigh, North Carolina, USA",,,US,Unknown,full-time,Unknown
+43f69aa616ce6288,greenhouse:ntconcepts,Database Developer,eMH,"Vienna, VA",,,US,Unknown,Unknown,Unknown
+478f34bf314b8964,ashby:perplexity,Member of Data Staff (Analytics Engineer),Data Science,San Francisco,San Francisco,California,US,hybrid,full-time,Unknown
+47f344985b95e35e,greenhouse:66degrees,"Associate AI/ML Engineer, Gradient Specialist",Graduate Specialist,"Chicago, IL",,,US,Unknown,Unknown,Unknown
+4a5e0b9ea336e605,greenhouse:sigmacomputing,AI/ML PhD Intern (Summer 2027),Engineering,"San Francisco, CA",,,US,Unknown,internship,Unknown
+4aca3f1b9f851c66,ashby:ibotta,"Data Scientist, Strategic Partner Analytics",Technical - Non-Engineering,Hybrid - Denver,Denver,Colorado,US,hybrid,full-time,Unknown
+4b1c2d6bfa46893b,ashby:neural-earth,Geospatial Data Scientist Lead,Product Engineering,United States,,,US,remote,full-time,Unknown
+4b3a9ffb6cba2605,greenhouse:nationalpublicradioinc,"Senior Data Insights Analyst, Mobile App",Audience Insight-Research - AIRESR,Remote,,,,remote,Unknown,Unknown
+4ee506ecc3ddb070,smartrecruiters:blend360,Senior Customer Analytics & Measurement Lead,,"Stamford, CT, United States",Stamford,CT,US,hybrid,full-time,senior
+4f3bdc35e4424277,workday:blackline:blacklinecareers,Staff I Data Engineer,,New York,,,US,hybrid,full-time,Unknown
+4fc213345a632ea6,greenhouse:drivewealth,Transaction Reporting Analyst,Brokerage & Client Services,Office - Chicago,,,,Unknown,Unknown,Unknown
+51faa3e0ed365a95,greenhouse:lyft,"Analytics Lead, Decisions & Insights",Central Market Management & AI,"New York, NY",,,US,Unknown,Unknown,Unknown
+53e308c6bea8d42c,ashby:tomo,Head of Data,Executive,New York City,New York City,New York,US,hybrid,full-time,Unknown
+54cbc72f69f80766,workday:chamberlain:chamberlain_group,Lead Analytics Engineer,,"Oak Brook, IL",,,US,Unknown,full-time,Unknown
+589f2175611730f0,greenhouse:upstart,Principal Data Scientist,Data Analytics Department,United States | Remote,,,,remote,Unknown,Unknown
+5b07ca5335ca7482,recruitee:hudsonmanpower,Senior GenAI Engineer - W2,Information Technology,"Schaumburg, Illinois, United States",Schaumburg,Illinois,US,onsite,contract,mid
+5c5c644e96ffa3ee,ashby:axle-careers,Analytics Engineer,Engineering,London,London,,GB,hybrid,full-time,Unknown
+5c72fa17dae3d0a0,greenhouse:zipcolimited,Senior Data Analyst II,Insights & Analytics,United States,,,US,Unknown,full-time,Unknown
+618abc7e0f4ae3e8,smartrecruiters:squaretrade1,Database Administrator,IT,"Denver, CO, United States",Denver,CO,US,onsite,full-time,senior
+633ef0b06b526717,ashby:advanced-systems-group,"Data Operations Engineer (Seattle, WA)",Embedded,"Seattle, Wa",Seattle,Washington,US,onsite,full-time,Unknown
+6602bae6f0a40d19,ashby:latamcent,Senior AI Researcher,Engineering & Artificial Intelligence,Brazil,,,BR,hybrid,full-time,Unknown
+664c2bb218326862,greenhouse:familyoffice,Senior Database Engineer,Technology,New York,,,,Unknown,Unknown,Unknown
+68bcb2cbe416c9e2,greenhouse:fortitudegroupholdingsllc,"Associate, End User Services Data Analyst",IT End User Services,Nashville,,,,Unknown,Unknown,Unknown
+6c42aa3377fcb5a8,workday:cheo:external_site,"Business Systems Analyst, Business Intelligence, Information Services – Temporary Full-Time (1.0) (until March 2028)",,"Ottawa, ON",,,CA,hybrid,full-time,Unknown
+6c7285d89d7b85f0,breezy:easypayfinance,Lead Analytics Engineer,,"Vista, CA",Vista,California,US,Unknown,full-time,Unknown
+6d6c812582268837,greenhouse:americaninstitutesforresearch,Senior Quantitative Researcher – CMMI Evaluations,R10 - Healthcare Innovations,US-Remote | US-VA-Arlington | US-NC-Chapel Hill | US-IL-Chicago | US-CA-Sacramento | US-TX-Austin,,,,remote,full-time,Unknown
+710decbf9953ad95,ashby:permitflow,Applied Machine Learning Engineer,Engineering,"New York City, NY",New York City,New York,US,hybrid,full-time,Unknown
+7426b9a9a8d10c37,ashby:lottie,Senior Data Analyst,Analytics,London,London,England,GB,hybrid,full-time,Unknown
+74565f759acb0a69,greenhouse:ripple,"Senior Manager, Marketing Analytics",Marketing,"New York, NY, United States",,,US,Unknown,Unknown,Unknown
+7522b8656706ebab,ashby:shiftsmart,"Data Analyst, Supply",Business Operations,New York City (HQ),New York,New York,US,Unknown,full-time,Unknown
+75651a6eb69e1977,greenhouse:solarisbank,Senior Bank Analytics Engineer,Technology,Berlin,,,,Unknown,Unknown,Unknown
+7692ff66079e5d13,workday:niagarawater:niagara,Sr. Compensation & Data Analyst (Remote),,"Corp-Offsite - Diamond Bar, CA",,,US,remote,full-time,Unknown
+777bd13e4ef6ebd8,greenhouse:resilience,Data Engineer,Engineering,United States,,,US,Unknown,Unknown,Unknown
+783fa45c6a1d30a5,workday:rollsroyce:intern_graduate,Junior Machine Learning Engineering,,Indianapolis,,,US,Unknown,full-time,Unknown
+78e2fa43a5f6f22e,greenhouse:torcrobotics,"Senior, ML Engineer - Tracking",Autonomy,Remote - US,,,,remote,Unknown,Unknown
+79773de98d26f30b,ashby:sibill,AI Engineer,Data,Italy - Remote,Italy,,IT,remote,full-time,Unknown
+79f4fdfba8279091,greenhouse:upstart,"Principal Data Scientist, Marketing Measurement",Data Analytics Department,United States | Remote,,,,remote,Unknown,Unknown
+7b35b95531589e2d,greenhouse:striveworks,"Senior Machine Learning Engineer, Agentic Systems",Machine Learning,"Remote or Austin, Texas, United States",,,,remote,Unknown,Unknown
+7b5be77ccff08dc3,smartrecruiters:evb,"AI/ML Engineer, Internal Platforms",,"Remote, OTHER",Remote,,XX,remote,full-time,senior
+7b9826c03f05e9e4,ashby:january,Senior Data Systems Engineer,Engineering,New York City,New York,New York,US,Unknown,full-time,Unknown
+7e067ae9e97c887a,workday:driscolls:driscolls,Advanced Forecast Analytics Modeler,,"US - Watsonville, California",,,US,onsite,full-time,Unknown
+80cbf5974be713c6,greenhouse:stitchfix,Principal Full-Stack Data Scientist  - Foundational Models,Algorithms,"Remote, USA",,,US,remote,Unknown,Unknown
+81a2b04c05ea0b2a,workday:aviva:external,Data Scientist,,Toronto,,,CA,Unknown,Unknown,Unknown
+841d032580d19552,workday:dollartree:dollartreeus,Finance Data Analyst,,VA-Chesapeake,,,US,Unknown,full-time,Unknown
+86ca860f43502fc8,greenhouse:chicory,Senior Data Engineer,Product & Engineering,United States,,,US,Unknown,Unknown,Unknown
+8788857232b3f8ab,workday:roche:rog-a2o-gene,"AI Scientist/Senior, Clinical & Molecular Genomics Modeling, BRAID",,South San Francisco,,,US,Unknown,full-time,Unknown
+8870abdbdb104f54,workday:neurocrine:neurocrinecareers,"Commercial Analytics Manager, VYKAT",,US CA San Diego One Paseo,,,US,onsite,full-time,Unknown
+88b8bf0b266f18bf,workday:aig:privatejobpostings,Actuarial Analyst,,NJ-Jersey City,,,US,Unknown,full-time,Unknown
+89c7d6e66bc7e7fc,ashby:code-metal,Senior AI Platform Engineer,Engineering,Boston Hub,Boston,Massachusetts,US,hybrid,full-time,Unknown
+8a66c9636d6e8803,smartrecruiters:squaretrade1,Database Administrator,IT,"Dallas, TX, United States",Dallas,TX,US,onsite,full-time,senior
+8a9955dd85c55deb,workday:barr:barrcareers,Senior Business Intelligence Developer (Hybrid),,"Minneapolis, MN",,,US,hybrid,full-time,Unknown
+8bd02e127356a752,ashby:optro,"Senior Analytics Engineer, Commercial",Sales,United States,,,US,remote,full-time,Unknown
+8c0b159c2d22021e,greenhouse:bcbgroup,Analytics Engineer,Tech-Change,London,,,,Unknown,Unknown,Unknown
+8d7ddd7861fe23c9,workday:premera:premera,Information Analyst III,,Telecommuter,,,US,Unknown,full-time,Unknown
+8dd3fdc0618c0f03,ashby:jane,Senior Data Analyst,Operations,Canada/US,,,CA,remote,full-time,Unknown
+8e69ca8641d72286,greenhouse:altentechnologyusa,Database Engineer,Engineering,"Foster City, California, United States",,,US,Unknown,full-time,Unknown
+8ee74f4db21babe8,workday:premierinc:external_professional,Data Scientist,,Remote,,,US,remote,full-time,Unknown
+8fb0770845dce717,greenhouse:wing,"Data Scientist Intern, Summer 2027",Internships,"Palo Alto, California",,,US,Unknown,internship,Unknown
+90f3406b535a2924,ashby:langdock,(Senior) Data & Analytics Engineer - m/f/d,Engineering,Berlin,,,DE,Unknown,full-time,Unknown
+90f948c3b8cdd743,greenhouse:mobilityware,Senior Data Analyst,Product Development,"Irvine, Ca",,,,Unknown,Unknown,Unknown
+9178a1abec5e0b4e,lever:sportalliance,Senior Data Scientist (m/f/d),Finion Capital,Remote (Poland),,,PL,remote,full-time,Unknown
+91f5a4aae7a825d0,greenhouse:relaytherapeutics,"Associate Director, Biostatistics",Precision Medicine,"Cambridge, MA",,,US,Unknown,Unknown,Unknown
+931385bfa831aa5c,greenhouse:spacex,Sr. Software Engineer (AI Data Engineering),Vehicle Engineering Software & AI,"Hawthorne, CA",,,US,Unknown,full-time,Unknown
+93788ac6cbd7f99c,workday:dtna:dtna_external,Data Science Intern,,"Portland, OR US",,,US,hybrid,full-time,Unknown
+95b218bbded19aa0,workday:adobe:external_experienced,"Sr. Director, AI, Data Science & Engineering",,San Jose,,,US,Unknown,full-time,Unknown
+96db456138d33d4b,greenhouse:autotrader,Principal Data Scientist,Product & Technology,Manchester,,,,Unknown,Unknown,Unknown
+96f6e6e05f9fac1e,lever:datalabusa,"Database Developer, Marketing Technologies",Marketing Technologies,"Germantown, MD",,,US,hybrid,full-time,Unknown
+97658b3717f14112,lever:datalabusa,Programmer Analyst - (entry-level data analyst/data scientist) Marketing Analytics,Students/Recent Graduates,"Germantown, MD",,,US,hybrid,full-time,Unknown
+9aa8811de90597ea,greenhouse:ensco,Senior Machine Learning Engineer,Mission Systems Group (MSG),"Melbourne, Florida, United States",,,US,Unknown,Unknown,Unknown
+9b4d528fa1a10da5,greenhouse:ripple,"Senior Manager, Marketing Analytics",Marketing,"San Francisco, CA, United States",,,US,Unknown,Unknown,Unknown
+9cac0dd49337a40b,ashby:versemedical,Data Analyst,Engineering,New York City,New York City,New York,US,hybrid,full-time,Unknown
+9d03b6daca8a590e,greenhouse:sigmacomputing,AI/ML PhD Intern (Summer 2027),Engineering,"New York, New York",,,US,Unknown,internship,Unknown
+9d1c3026ed8220b2,greenhouse:woolpert,AI/ML Engineer,Cloud Solutions & Interdisciplinary Systems,Remote - United States,,,US,remote,Unknown,Unknown
+a11116db67894d23,workday:vertexinc:referrals,Principal AI Engineer,,Remote USA,,,US,remote,full-time,Unknown
+a1b83b5c532c96c1,workday:kemper:kemper_careers,Senior Actuarial Analyst - Pricing,,"Alpharetta, Georgia",,,US,remote,Unknown,Unknown
+a22424227ff54e88,greenhouse:advancedspace,Machine Learning Engineer (2-5 yrs),Machine Learning,"Westminster, CO",,,US,Unknown,Unknown,Unknown
+a2ed7d23b7172378,workday:politico:politico,Machine Learning Engineer,,"Arlington, VA",,,US,Unknown,full-time,Unknown
+a4c826b0f1f94652,greenhouse:natera,"Manager of Data Analysis for Lab Production Support, Extended-Hours Support (ExHS)",Molecular Biology Informatics & Statistics,US Remote,,,,remote,Unknown,Unknown
+a4df07d76efc5265,lever:pointclickcare,Marketing Data Analytics Engineer (US),PointClickCare,"Remote, USA",,,US,remote,full-time,Unknown
+a784bb6244b128fe,ashby:duck-duck-go,Senior Data Scientist,Data Science,Remote,,,,remote,full-time,Unknown
+a7e9dea0132575d0,ashby:quora,"Senior Machine Learning Engineer, Ranking - Quora (Remote)",Engineering,Remote - Multiple Locations,,,US,remote,full-time,Unknown
+a85d09064d9bbd69,smartrecruiters:bertelsmann-jobs,"Senior AI Solutions Engineer, Data Science, Penguin Random House (Open to Remote)",,"New York, New York (NY), United States",New York,New York (NY),US,remote,full-time,senior
+a8823863aa8c5ceb,greenhouse:ensco,Scientific Data Analyst,Mission Systems Group (MSG),"Melbourne, Florida, United States",,,US,Unknown,Unknown,Unknown
+a8aef33b846460f6,greenhouse:formlabs,Data Engineer,zArchiveDepartment,"Somerville, MA",,,US,Unknown,full-time,Unknown
+a98ba8c2971ba551,greenhouse:netlify,Senior Staff Data Scientist,R&D,Remote,,,,remote,Unknown,Unknown
+aa65f7046e67e18c,ashby:sift,Machine Learning Engineer,Engineering,"San Francisco, California",San Francisco,California,US,hybrid,full-time,Unknown
+ab07b94cca9ce871,ashby:pivotal-health,Financial Data Analyst,Strategy & Analytics,"Williamsburg, NY",Brooklyn,New York,US,hybrid,full-time,Unknown
+ab3e3da5926fcb3e,ashby:metriport,Senior AI/ML Engineer,Engineering,San Francisco,San Francisco,California,US,hybrid,full-time,Unknown
+af04143e2b473c41,workday:vertexinc:referrals,Senior Principal AI Engineer,,Remote USA,,,US,remote,full-time,Unknown
+af437cea5e723018,ashby:vibe,Staff or Senior Machine Learning Engineer - Identity & Audience,Engineering & Product,Paris,Paris,Île-de-France,FR,hybrid,full-time,Unknown
+b047fd51ddec6a91,ashby:distributed-spectrum,"Senior Software Engineer, Data Engineering",Engineering,New York City,New York City,New York,US,onsite,full-time,Unknown
+b0d12d931e091c3e,greenhouse:clear,Forward Deployed AI Engineer II,Engineering,"New York, NY, United States",,,US,Unknown,Unknown,Unknown
+b11d22db30e58616,greenhouse:moloco,Senior Marketing Insights Analyst,Ads GTM,"Menlo Park, California, United States; San Francisco, California, United States",,,US,Unknown,Unknown,Unknown
+b1dd65d825304bd0,workday:biibhr:external,"Co-op, Integrated Insights & Analytics, Nephrology",,"Cambridge, MA",,,US,hybrid,full-time,Unknown
+b2d39ec1d6c2ab9c,greenhouse:cambridgemobiletelematics,Principal Analytics Engineer,Customer Solutions,"Cambridge, MA",,,US,Unknown,Unknown,Unknown
+b59f02ade8c78f11,ashby:tracelabs,"Machine Learning Engineer, Applied",Engineering,United States,United States,,US,remote,full-time,Unknown
+b657ada4d734e64e,ashby:clickhouse,Senior Software Engineer (Backend) - AI/ML,Engineering,Portugal,,,PT,Unknown,full-time,Unknown
+b69d0eefffb2061f,greenhouse:zestai,Data Scientist,Data Science,Remote,,,,remote,Unknown,Unknown
+b855f0a35416aa70,ashby:opusclip,Data Science Lead,Engineering,Mountain View,Mountain View,California,US,onsite,full-time,Unknown
+b8a9768a4f97d194,ashby:benepass,Sr. Data Engineer,Engineering,U.S Remote,,,,remote,full-time,Unknown
+b97e5635f667fba5,ashby:eneba,Analytics Engineering Lead,Technology,Europe,Kaunas,,LT,remote,full-time,Unknown
+bcd987f908e76334,ashby:workos,Data Engineer,Sales,United States & Canada,San Francisco,California,US,remote,full-time,Unknown
+bcdef25e8f6ac318,greenhouse:axonius,Principal Data Engineer,Data & Analytics,Remote US,,,,remote,Unknown,Unknown
+bd23ea901b443fa7,smartrecruiters:linkedin3,"Data and Reporting Analyst, Source to Pay",Finance,"Mountain View, CA, United States",Mountain View,CA,US,hybrid,full-time,senior
+bdca7adaa28ad506,workday:mtb:wtexternal,Credit Model Development Quantitative Expert – Commercial Credit Portfolio (Hybrid - see potential work locations in job description),,"Buffalo, NY",,,US,hybrid,full-time,Unknown
+bdd15749c5fec719,greenhouse:stockx,"Director, AI/ML Engineering",Engineering & Technology,"Detroit, MI",,,US,Unknown,Unknown,Unknown
+bed1be8fa74c298c,ashby:clickhouse,Senior Software Engineer (Typescript / Frontend) - AI/ML,Engineering,Australia,,,AU,remote,full-time,Unknown
+c1a0ff4aa6e69942,workday:lcbo:lcbocareersite,Database Administrator,,"Toronto, Ontario",,,CA,Unknown,full-time,Unknown
+c203e0835dc737b0,ashby:whoop,Staff AI Researcher (Foundation AI),Machine Learning & AI Research,"Boston, MA",Boston,Massachusetts,US,onsite,full-time,Unknown
+c2b89a447f679023,ashby:telus-digital,"Director and Practice Lead, Data Engineering",DS Operations,"Remote, Ontario",,Ontario,CA,remote,full-time,Unknown
+c2ebe4cf14424e6e,ashby:futurefitai,Senior AI Engineer,Data,Remote (North America),,,,remote,full-time,Unknown
+c347db9b516873bf,ashby:blissway,"Software Engineer, Machine Learning Operations",Engineering Positions,"Denver, Colorado",Denver,Colorado,US,hybrid,full-time,Unknown
+c6ed0fe0505ce87f,lever:sportalliance,Senior Data Scientist (m/f/d),Finion Capital,Remote (Germany),,,DE,remote,full-time,Unknown
+c8c723497f97c999,ashby:grow-therapy,"Data Analyst, Lives Covered",Technology,San Francisco,San Francisco,California,US,hybrid,full-time,Unknown
+cacf4538c73c51ec,lever:seb,"Business Information Data Architect in Product Development & Technology | SEB, Tallinn",Baltic,Tallinn,,,EE,hybrid,other,Unknown
+cbf2b502db1a5815,greenhouse:ensono,Expert Database Architect,E7001 Cloud Native Consulting,Remote - United States,,,US,remote,other,Unknown
+cca2d498114272a5,workday:ing:icsgblcor,Big Data Engineer (mid/senior),,Warszawa (Pa?ska 97),,,PL,Unknown,full-time,Unknown
+ccd3e49f734aa001,workday:snapchat:sourced,"Principal Machine Learning Engineer, Platform Integrity Engineering, Level 7",,"Bellevue, Washington",,,US,Unknown,full-time,Unknown
+ce8ff7d84b67596d,workday:pnc:external,Business Analytics Consultant Sr (Commercial),,Firstside Center Bldg (PA373),,,US,Unknown,full-time,Unknown
+cf4b58acaddfe62c,workday:etsy:etsy_careers,"Senior Software Engineer I, Machine Learning, Search Systems",,"Dublin, Ireland",,,IE,remote,full-time,Unknown
+cf84057002ae5fd7,greenhouse:qventus,Senior Data Scientist,Engineering,"Remote, United States",,,US,remote,Unknown,Unknown
+d1925dca14eb2f93,ashby:remarcable-inc,Data Scientist,Engineering,"Vancouver, BC (Hybrid)",Vancouver,British Columbia,CA,hybrid,full-time,Unknown
+d32942ba58c8d3ad,workday:pfizer:internaljobs,"Director, Global Hospital and Biosimilars (GH&B) Digital - End to End Data Architect",,United States - New York - New York City,,,US,Unknown,full-time,Unknown
+d77670cfbf52badc,breezy:ninjaholdings,Data Analyst - Marketing,,"Chicago, IL",Chicago,Illinois,US,remote,full-time,Unknown
+d87d664364df21c7,lever:opencast,Data Engineer - Senior Consultant,Software Delivery,"Hybrid - Newcastle, Edinburgh, Glasgow, Leeds, Manchester, Birmingham, Bristol, London",,,GB,hybrid,full-time,Unknown
+d93378ac49925aa7,workday:nngroup:wdexternal,Data Scientist,,Amsterdam,,,NL,Unknown,full-time,Unknown
+d9ad83d1dd9236a0,ashby:lilt-corporate,Data Engineering Manager,Engineering,"Indianapolis, IN",Indianapolis,Indiana,US,remote,full-time,Unknown
+d9e21d29389f9333,greenhouse:snorkelai,Staff Applied AI Engineer - Enterprise AI Solutions,220 - Solutions PS,"New York City, NY (Hybrid); San Francisco, CA (Hybrid); United States (Remote)",,,,hybrid,Unknown,Unknown
+dc3c3898f182e383,workday:hp:exteu-ac-careersite,Machine Learning Engineer,,"Spring, Texas, United States of America",,,US,Unknown,full-time,Unknown
+dd203f2ad04410e5,smartrecruiters:wise,Lead Data Scientist - KYC/Onboarding,,"London, United Kingdom",London,,GB,onsite,full-time,senior
+df690d9fd33045a7,ashby:localstack,Senior Product Data Analyst,Platform & Data,Spain,Barcelona,Catalonia,ES,remote,full-time,Unknown
+e399b3aab95f4e0f,recruitee:ecocert,Stage Data Engineer/Analyst Approvisionnement responsable (H/F),Transitions,"Paris, Île-de-France, France",Paris,Île-de-France,FR,onsite,internship,internship
+e4457fb3052a2528,ashby:binti,Data Engineer,Engineering,"Binti HQ - San Francisco, CA",San Francisco,California,US,hybrid,full-time,Unknown
+e4bd7f3b9ca2c283,greenhouse:capco,AI Engineer,Tech & Engineering,Canada - Toronto,,,,Unknown,Unknown,Unknown
+e63970e3046e096a,lever:steerbridge,Junior NLP Data Scientist,Modern Disabilities Claims,"Vienna, VA",,,US,hybrid,full-time,Unknown
+e6dd15d38469d0f8,workday:axiscapital:axiscareers,Principal Security AI Engineer,,"Alpharetta, GA",,,US,Unknown,full-time,Unknown
+e76e42799343f75c,workday:rbi:rbi_external_career_site,"Manager, Marketing Analytics & Planning, Firehouse Subs Canada",,Corp - Toronto Corporate Office,,,CA,Unknown,full-time,Unknown
+e82a43b1068dfa63,workday:kyndryl:kyndrylprofessionalcareers,Data Analyst,,"Research Triangle Park, NC, USA",,,US,Unknown,full-time,Unknown
+e8a0408385362919,greenhouse:coderoad,Lead Agentic AI Engineer,CodeRoad,United States,,,US,Unknown,Unknown,Unknown
+eb1de185f5457e55,greenhouse:capitaltg,Lead AI/ML Engineer,Federal,Remote,,,,remote,Unknown,Unknown
+ec09bd397bb2e4bd,ashby:ibotta,"Principal Decision Scientist, Strategic Partner Analytics",Technical - Non-Engineering,Hybrid - Denver,Denver,Colorado,US,hybrid,full-time,Unknown
+ece9c9c38b8dfa06,greenhouse:figma,"PhD Intern, AI Applied Scientist (2027)",Early Career,"San Francisco, CA • New York, NY",,,US,Unknown,internship,Unknown
+ecfad9e6497515ab,ashby:vizcom,"Data Engineer, Machine Learning","EPD (Engineering, Product, Design)",San Francisco,San Francisco,California,US,hybrid,full-time,Unknown
+eddbe6abcbccfbf9,greenhouse:taxreliefadvocates,Senior Data Engineer (AI Infrastructure),Technology,"Irvine, CA",,,US,Unknown,Unknown,Unknown
+f074700fd590dc57,workday:mitsubishichemicalgroup:mccgroupcareers,Senior Data Engineer,,Placeholder Location United States of America (IA to Non Workday),,,US,Unknown,full-time,Unknown
+f3141ef50828db1c,workday:alkegen:alkegen,Operations Analytics Manager,,"Buffalo, NY",,,US,Unknown,full-time,Unknown
+f3581f0fb3043e5c,workday:pacificlife:pacificlifecareers,Analytics Engineer,,Newport Beach CA-700,,,US,Unknown,full-time,Unknown
+f60debcf07bb8000,greenhouse:ocrolusinc,Lead Credit & Risk Data Science / Analytics,Engineering,"New York, United States",,,US,Unknown,Unknown,Unknown
+f7425e10f35218c1,ashby:lightspeedhq,Senior Analytics Engineer,Technology,Toronto,Toronto,Ontario,CA,remote,full-time,Unknown
+f882ddc031eebbd7,lever:blueland,Analytics Engineer Contractor,,Remote,,,US,remote,contract,Unknown
+f973d672c7988bfb,breezy:location3-media,Data Analytics Manager,,"Denver, CO",Denver,Colorado,US,remote,full-time,Unknown
+f9cb67c9634196b3,greenhouse:vercel,"Machine Learning Engineer, Trust & Safety",Security,"Hybrid - San Francisco, New York City",,,,hybrid,Unknown,Unknown
+fa098b1482a73733,smartrecruiters:wix2,Machine learning Engineer,,"Vancouver, Canada",Vancouver,,CA,hybrid,full-time,senior
+fa42b40c025eb556,workday:pfg:pfgcareers,Data Engineer 1,,Langley Office - Langley BC,,,CA,Unknown,full-time,Unknown
+fafde8f7ffbd4329,ashby:code-metal,Staff AI Platform Engineer,Engineering,Boston Hub,Boston,Massachusetts,US,hybrid,full-time,Unknown
+fbba4cafb362a1fa,ashby:e2b,Senior Data Engineer,Engineering,San Francisco,San Francisco,California,US,onsite,full-time,Unknown
+fd196ecc84bcb506,greenhouse:vaxcyte,"Scientist I, Drug Product Analytics (Laboratory Automation)",Drug Product,"San Carlos, California, United States",,,US,Unknown,Unknown,Unknown
+fd823c1ad6e543f9,workday:bmo:privileged,"Associate, Data Scientist",,"Toronto, ON, CAN",,,CA,Unknown,full-time,Unknown
+fdabe84844140c7f,ashby:iwoca.co.uk,Data Scientist - Partner Flow Team,Data Science,London,London,United Kingdom,GB,hybrid,full-time,Unknown
+fe17464bab227d02,greenhouse:impact,Marketing Analytics Manager,Finance,New York; Remote,,,,remote,Unknown,Unknown
+fe9f42a9c622892f,greenhouse:drweng,Quantitative Researcher - Prediction Markets,FX & Metals Options,New York,,,,Unknown,full-time,Unknown
+fea7bd1226cbd52a,greenhouse:eucalyptus,Data Analyst - AU,Data & Analytics,AU - HQ - NSW,,,,Unknown,Unknown,Unknown
+ffc631e84d424e3c,greenhouse:life360,Lead Data Scientist,Analytics,"Remote, USA; Remote, Canada",,,,remote,Unknown,Unknown
