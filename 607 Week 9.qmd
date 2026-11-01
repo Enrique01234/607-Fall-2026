@@ -1,0 +1,143 @@
+---
+title: "607 Week 9"
+Name: "Enrique Delamonica"
+format: html
+editor: visual
+---
+
+---
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Introduction
+
+Besides the usual and useful tidyverse library, two additional libraries are downloaded. They are: jsonlite and repurrrsive. I have used jsonlite before and repurrrsive is mentioned in the textbook ("R for Data Science").
+
+```{r}
+library(tidyverse)
+library(jsonlite)
+library(repurrrsive)
+```
+
+### The data
+
+For this exercise data had to be requested from the New York Times developer API. I was interested in obtaining the most recent best-seller list for hard cover non-fiction books. No special requests, e.g. using a different time period from the latest list, were made.
+
+I was able to retrieve the data from the New York Times API using:
+
+api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=...
+
+from which I have deleted the last part where my personal key is listed.
+
+```{r}
+Nonfiction<- read_json("https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/Nonfinction.json" , simplifyVector = TRUE)
+```
+
+## Surmounting challenges
+
+As I used the simplifyVector option, I was expecting a data frame. However, "Nonfiction" is a list of 5 elements. I was puzzled so I tried to explore it.
+
+```{r}
+Nonfiction
+```
+
+However, I could not make much sense of it. Moreover, although it does not seem to show in the knitted version, when running it in RStudio, I could see a data frame which included information I was interested in, such as the author and the title of the books.
+
+Then, I tried using the "str"function.
+
+```{r}
+str(Nonfiction)
+```
+
+This output helped me to visualize and understand the nested lists better. Also, it allowed me to see the elements that have only one value (e.g. "copyright" or "updated") and those that have several entries (e.g. "author" or "name", which refers to sellers of the books which is in a nested list within "books" called "buy_links" which includes a dataframe).
+
+Additionally, opening the list from the environment pane to view it on the source pane was very useful. It also allowed me to see clearly the nested structure of the lists as well as where the 15x28 data frame was located.
+
+The Nonfiction list has 5 elements (which can also be seen with the "str" function):
+
+status
+
+copyright
+
+num_results
+
+last_modified
+
+results
+
+Except for "results", which is a list with 12 elements, all the other ones are single-valued characters or integers.
+
+Then, I opened up the "results" list. Eleven of the twelve elements are also single-valued characters or integers. However, the last one, called "books", is where the information I am interested in is available for the 15 books in the best-seller list. I could see this list, as I mentioned above, in the source pane when exploring the list "Nonfiction".
+
+From this point onward the task is simple. I just need to get this data frame and select the columns (author, title, publisher, rank, and rank last week) from the 28 columns in the data frame. Moreover, this data frame is already tidy.
+
+## Further challenges and a dead end
+
+However, it proved impossible.
+
+I tried to use the unnest functions. I tried: unnest() , unnest_wider() , and unnest_longer() .
+
+None worked. For instance:
+
+```{r}
+Nonfiction|> unnest()
+```
+
+However, I could not find columns in Nonfiction because it is a list.
+
+After several attempts and rereading the chapter in the "R for Data Science" textbook as well as several entries in tidyr.tidyverse.org and the vignette on rectangling, I figured out I needed to create a tibble.
+
+```{r}
+Nonfictiontib<-tibble(tounnest = Nonfiction)
+```
+
+```{r}
+Nonfictiontib
+```
+
+Now I could use unnest_longer, given the elements in the tibble are not named.
+
+```{r}
+Nonfictiontib |> unnest_longer(tounnest)
+```
+
+I was dumbfounded as I could not figure out how to convert the integer into a character. The "as.character" function did not work.
+
+As I knew the database was there, I kept on trying. One element that puzzled is that many error messages kept saying I needed the column names or that they were not available. However, I could see the names of the elements, even the name of the list I was looking for ("books", which was within the list "results") when I called either the list or the tibble from the environment pane to the source pane.
+
+Then I figured I could get the names using the "names" function
+
+```{r}
+names(Nonfictiontib$tounnest)
+```
+
+I tried using the names with "unnest_wider"
+
+```{r}
+Nonfictiontib |> unnest_wider(tounnest)
+```
+
+I could not find a way to use "names_sep" to include the names in the "unnest_wider" functions.
+
+As I knew the data frame with the information I wanted was there, within the nested lists, I tried to use the "hoist" function, which can go through the nested lists. However, as far as I could figure out, it would only help to retrieve particular components of a vector.
+
+Basically, I failed.
+
+## Borrowing a solution
+
+As I kept on exploring I stumbled on an exercise by a former student that solved the problem in an incredible simple wayin RPubs. It uses the "select" function and "\$" to sift through the layers of lists.
+
+```{r}
+Nonfictionresultsbooks<-Nonfiction$results$books|>
+  select(author, title, publisher, rank, rank_last_week)
+```
+
+```{r}
+Nonfictionresultsbooks
+```
+
+This is it. Incredibly simple!
