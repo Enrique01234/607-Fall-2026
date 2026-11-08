@@ -1,0 +1,472 @@
+---
+title: "607 Week 10 A"
+author: "Enrique Delamonica"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Introduction
+
+This exercise consist of three parts. First, the results in Chapter 2 of Text Mining with R by J. Silge and D. Robinson (<https://www.tidytextmining.com/)> are reproduced.Then there are two extensions, one with a different set of books and another one with a different sentiment lexicon applied to Jane Austen's novels.
+
+These are some of the libraries and packages that may be needed to reproduce the results in Chapter 2.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(tidytext)
+library(stringr)
+install.packages("textdata")
+library(ggplot2)
+library(wordcloud)
+library(reshape2)
+library(janeaustenr)
+library(gutenbergr)
+```
+
+These are the sentiment lexicons that will be used.
+
+```{r}
+get_sentiments("afinn")
+get_sentiments("bing")
+get_sentiments("nrc")
+```
+
+## Reproducing Chapter 2 results
+
+### First basic steps
+
+Following the steps in the book, first the books are retrieved and converted to a tidy format.
+
+```{r}
+tidy_books <- austen_books() |>
+  group_by(book) |>
+  mutate(
+    linenumber = row_number(),
+    chapter = cumsum(str_detect(text, 
+                                regex("^chapter [\\divxlc]", 
+                                      ignore_case = TRUE)))) |>
+  ungroup() |>
+  unnest_tokens(word, text)
+```
+
+I check what is in the data frame.
+
+```{r}
+glimpse(tidy_books)
+```
+
+Then, for the book "Emma", the lexicon nrc is used to look for words related to "joy".
+
+```{r}
+nrc_joy <- get_sentiments("nrc") |> 
+  filter(sentiment == "joy")
+
+tidy_books |>
+  filter(book == "Emma") |>
+  inner_join(nrc_joy) |>
+  count(word, sort = TRUE)
+```
+
+It seems to work, However, "young" was not picked up here (it is in the textbook example). All the other ones match, both in terms of rank and the word count. The only exception is "happiness" that is not shown in the book. It seems to have moved up the list as "young" has not appeared here.
+
+Something similar is done across all six novels. However, in these graphs, the prevalence of positive or negative sentiments is plotted along the narrative of each novel. This is done by estimating the prevalence of these sentiments in sections of 80 lines.
+
+```{r}
+jane_austen_sentiment <- tidy_books |>
+  inner_join(get_sentiments("bing")) |>
+  count(book, index = linenumber %/% 80, sentiment) |>
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) |> 
+  mutate(sentiment = positive - negative)
+```
+
+There is an error message. However, it does not seem to affect the construction of the following graphs.
+
+```{r}
+ggplot(jane_austen_sentiment, aes(index, sentiment, fill = book)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~book, ncol = 2, scales = "free_x")
+```
+
+The graphs seem to correspond to the ones in the textbook. However they do not show up in the Plots tab in the R pane.
+
+### Small detour to explore the lexicons
+
+In the textbook, the book Pride and Prejudice is selected to explore the three sentiment lexicons. Thus, first, Pride and prejudice is set up as a tidy data frame.
+
+```{r}
+pride_prejudice <- tidy_books %>% 
+  filter(book == "Pride & Prejudice")
+
+pride_prejudice
+```
+
+In the next step, what was done above for all six novels using the Bing et al sentiment lexicon is done with the other two lexicons only for Pride and Prejudice. Then, all three abalyses are shown together.
+
+```{r}
+afinn <- pride_prejudice |> 
+  inner_join(get_sentiments("afinn")) |> 
+  group_by(index = linenumber %/% 80) |> 
+  summarise(sentiment = sum(value)) |> 
+  mutate(method = "AFINN")
+
+bing_and_nrc <- bind_rows(
+  pride_prejudice |> 
+    inner_join(get_sentiments("bing")) |>
+    mutate(method = "Bing et al."),
+  pride_prejudice |> 
+    inner_join(get_sentiments("nrc") |> 
+                 filter(sentiment %in% c("positive", 
+                                         "negative"))
+    ) |>
+    mutate(method = "NRC")) |>
+  count(method, index = linenumber %/% 80, sentiment) |>
+  pivot_wider(names_from = sentiment,
+              values_from = n,
+              values_fill = 0) |> 
+  mutate(sentiment = positive - negative)
+```
+
+Same error message as above. However, the graphs do work out below.
+
+```{r}
+bind_rows(afinn, 
+          bing_and_nrc) |>
+  ggplot(aes(index, sentiment, fill = method)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~method, ncol = 1, scales = "free_y")
+```
+
+Clearly, each sentiment lexicon provides different results. Part of the reason is due to different counts of positive and negative words in each lexicon, These can be counted and compared (in a bar chart, below).
+
+```{r}
+get_sentiments("nrc") |> 
+  filter(sentiment %in% c("positive", "negative")) |> 
+  count(sentiment)
+```
+
+The results are slightly different from the ones in the text book (3324 neg and 2312 pos)
+
+```{r}
+get_sentiments("bing") |> 
+  count(sentiment)
+```
+
+These numbers do match the ones in the textbook.
+
+```{r}
+bing_word_counts <- tidy_books |>
+  inner_join(get_sentiments("bing")) |>
+  count(word, sentiment, sort = TRUE) |>
+  ungroup()
+```
+
+Similar error message as above
+
+```{r}
+bing_word_counts
+```
+
+Same results as in the text book
+
+```{r}
+bing_word_counts |>
+  group_by(sentiment) |>
+  slice_max(n, n = 10) |> 
+  ungroup() |>
+  mutate(word = reorder(word, n)) |>
+  ggplot(aes(n, word, fill = sentiment)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~sentiment, scales = "free_y") +
+  labs(x = "Contribution to sentiment",
+       y = NULL)
+```
+
+In the textbook, it is mentioned that the word "miss" is counted as a negative word but, in these books, "miss" is an unmarried woman. It is also mentioned that the word "miss" can be added to the list of "stop words" (which in chapter 1 of the textbook are described as: "words that are not useful for an analysis, typically extremely common words such as “the”, “of”, “to”, and so forth in English").
+
+```{r}
+custom_stop_words <- bind_rows(tibble(word = c("miss"),  
+                                      lexicon = c("custom")), 
+                               stop_words)
+
+custom_stop_words
+```
+
+### Continuing the analysis of Austen's novels
+
+A wordcloud can be constructed. This is done for all six novels.
+
+```{r}
+tidy_books |>
+  anti_join(stop_words) |>
+  count(word) |>
+  with(wordcloud(word, n, max.words = 100))
+```
+
+In a wordcloud, it is also possible to separate positive and negative words.
+
+```{r}
+tidy_books |>
+  inner_join(get_sentiments("bing")) |>
+  count(word, sentiment, sort = TRUE) |>
+  acast(word ~ sentiment, value.var = "n", fill = 0) |>
+  comparison.cloud(colors = c("gray20", "gray80"),
+                   max.words = 100)
+```
+
+Interpreting this wordcloud is a bit complicated as the size of the words show their relative importance within each group (i.e. among the positive and the negative sentiments). Thus, as it says in the textbook: "the sizes of the words are not comparable across sentiments"
+
+Also, the words in this graph are different from the ones in the textbook. And the wordcloud does not appear in the Plots tab in the R panel.
+
+Another type of analysis involves exploring sentences instead of individual words.
+
+```{r}
+p_and_p_sentences <- tibble(text = prideprejudice)|>
+   unnest_tokens(sentence, text, token = "sentences")
+```
+
+The second sentence in the book Pride and Prejudice is:
+
+```{r}
+p_and_p_sentences$sentence[2]
+```
+
+It obviously comes after the title, which is the first sentence:
+
+```{r}
+p_and_p_sentences$sentence[1]
+```
+
+The final type of analysis in the textbook involves an analysis by chapter.
+
+```{r}
+austen_chapters <- austen_books() |>
+  group_by(book) |>
+  unnest_tokens(chapter, text, token = "regex", 
+                pattern = "Chapter|CHAPTER [\\dIVXLC]") |>
+  ungroup()
+
+austen_chapters |> 
+  group_by(book) |> 
+  summarise(chapters = n())
+```
+
+Then, the negative sentiments are counted in each chapter. As different chapters have varying amounts of words, the ratio of negative words to total words in the chapter is calculated, This is used to find the chapter with the highest ratio of negative words.
+
+```{r}
+bingnegative <- get_sentiments("bing") |> 
+  filter(sentiment == "negative")
+
+wordcounts <- tidy_books |>
+  group_by(book, chapter) |>
+  summarize(words = n())
+
+tidy_books |>
+  semi_join(bingnegative) |>
+  group_by(book, chapter) |>
+  summarize(negativewords = n()) |>
+  left_join(wordcounts, by = c("book", "chapter")) |>
+  mutate(ratio = negativewords/words) |>
+  filter(chapter != 0) |>
+  slice_max(ratio, n = 1) |> 
+  ungroup()
+```
+
+The results are the same as in the textbook
+
+## Exploring different books
+
+In order to explore different books, I use the gutenbergr package. It had been retrieved above and I can explore what it contains and how to find information about it with
+
+```{r}
+?gutenbergr
+```
+
+```{r}
+??gutenbergr
+```
+
+```{r}
+ View(gutenberg_metadata)
+```
+
+The data frame gutenberg_metadata has 8 elements from each book such as author, the language, and the subject matter or category. The latter is called gutenberg_bookshelf. It can be arranged alphabetically. This allowed me to find books on economics. There are about 45 titles. From these ones I have selected four important classic book from the history of economic thought: A. Smith's The Wealth of Nations (gutenbergr ID: 38194), D. Ricardo's Principles of Political Economy and Taxation (33310), W. Jevons' Political Economy (33219), and J. M. Keynes' General Theory (65278).
+
+```{r}
+econ_big4 <- gutenberg_download(c(38194, 33310, 33219, 65278))
+```
+
+```{r}
+tidy_books_g <- econ_big4 |>
+  group_by(gutenberg_id) |>
+  mutate(
+    linenumber = row_number(),
+    chapter = cumsum(str_detect(text, 
+                                regex("^chapter [\\divxlc]", 
+                                      ignore_case = TRUE)))) |>
+  ungroup() |>
+  unnest_tokens(word, text)
+```
+
+```{r}
+tidy_books_g
+```
+
+```{r}
+glimpse(tidy_books_g)
+```
+
+As it is explained below, I was not expecting the results I found. As this pertains to the book by Jevons, I explored its content a bit further. Although I did this afterwards, it seems logical to mention it here.
+
+```{r}
+jevons <- tidy_books_g %>% 
+  filter(gutenberg_id == "33219")
+
+jevons
+```
+
+The list of chapters does not match the version of Jevon's classic book "The Theory of Political Economy". Also, the title in gutenbergr is only "Political Economy", not the full title and it is an edition from 1880, which is not the first one (from 1871), nor one of the editions listed in <https://www.hetwebsite.net/het/profiles/jevons.htm,> which is one of the best websites for history of economic thought. Besides biographies of major economists throughout history it has links to PDFs or online versions of the original books and articles. For instance, in this case, it has a link to <https://books.google.com.ar/books?id=Sw8ZAAAAYAAJ&pg=PR3&redir_esc=y#v=onepage&q&f=false> (a PDF of a photocopy of the book at the Littauer Library of Harvard University)
+
+In spite of these challenges, I have used the book in the exercise that follows. Some of the conclusions below would have to be taken with caution and require further exploration. Nevertheless, I was able to carry out the exercise.
+
+I looked for other lexicons online, using "tidytext sentiment lexicon" in Google.
+
+I have found a reference to chapter 5.3.1 in "Text Mining with R: A Tidy Approach"!
+
+There I found the Loughran and McDonald dictionary of financial sentiment terms
+
+```{r}
+get_sentiments("loughran")
+```
+
+I explored the words in the lexicon in "[https://sraf.nd.edu/loughranmcdonald-master-dictionary/"](https://sraf.nd.edu/loughranmcdonald-master-dictionary/")
+
+From my work on macroeconomics years ago, I have always been interested in uncertainty. So I chose uncertainty over the other words they use for sentiment categories (which are: negative, positive, litigious, strong modal, weak modal, and constraining)
+
+```{r}
+l_unc <- get_sentiments("loughran") |> 
+    filter(sentiment == "uncertainty")
+```
+
+```{r}
+l_unc
+```
+
+I explored Keynes' book, as Keynes did write a lot about uncertainty. I did this to see if what I was doing was working.
+
+```{r}
+tidy_books_g |>
+  filter(gutenberg_id == "65278") |>
+  inner_join(l_unc) |>
+  count(word, sort = TRUE)
+```
+
+As it seemed to work, I have reproduced the work done for Jane Austen above, to the four classic economics books (trying to analyze the presence of sentiments about uncertainty).
+
+```{r}
+econ_sentiment <- tidy_books_g |>
+  inner_join(get_sentiments("loughran")) |>
+  count(gutenberg_id, index = linenumber %/% 80, sentiment) |>
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) |> 
+  mutate(sentiment = positive - negative)
+```
+
+I tried to plot the results.
+
+```{r}
+ggplot(econ_sentiment, aes(index, sentiment, fill = gutenberg_id)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~gutenberg_id, ncol = 2, scales = "free_x")
+```
+
+As expected, it does seem there are more occurrences of words related to uncertainty on Keynes' General Theory than the other three books. Also, they tend to be more negative.
+
+Also, just in case, I also explored combining less lines than in the novels, under the assumption that in novels more lines may be need to capture sentiments than in theoretical books about econonmics. I have used 40 instead of 80 lines.
+
+```{r}
+econ_sentiment_40 <- tidy_books_g |>
+  inner_join(get_sentiments("loughran")) |>
+  count(gutenberg_id, index = linenumber %/% 40, sentiment) |>
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) |> 
+  mutate(sentiment = positive - negative)
+```
+
+I tried to plot the results.
+
+```{r}
+ggplot(econ_sentiment_40, aes(index, sentiment, fill = gutenberg_id)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~gutenberg_id, ncol = 2, scales = "free_x")
+```
+
+Although there is more granularity, the pattern is consitent with what I had found using 80 lines.
+
+Then I tried to reproduce the analysis by chapter (which is not affected by the number of lines).
+
+```{r}
+uncertainty_g <- get_sentiments("loughran") |> 
+  filter(sentiment == "uncertainty")
+
+wordcounts <- tidy_books_g |>
+  group_by(gutenberg_id, chapter) |>
+  summarize(words = n())
+
+tidy_books_g |>
+  semi_join(uncertainty_g) |>
+  group_by(gutenberg_id, chapter) |>
+  summarize(negativewords = n()) |>
+  left_join(wordcounts, by = c("gutenberg_id", "chapter")) |>
+  mutate(ratio = negativewords/words) |>
+  filter(chapter != 0) |>
+  slice_max(ratio, n = 1) |> 
+  ungroup()
+```
+
+Here I was surprised by two elements. First, A. Smith's book does not appear. It is strange because it does show in the graph.
+
+Secondly, as a proportion of the words in the chapter with more occurrences, the book by Keynes comes in last. I was intrigued by Jevons' book having more occurrences of words associated to sentiments of uncertainty than Keynes'. At this point I explored in depth the book by Jevons as mentioned above. The results probably need to be taken with a grain of salt.
+
+## Exploring uncertainty in Jane Austen's novels
+
+As I have worked with the Loughran and McDonald lexicon to explore uncertainty, I have used it to analyze Jane Austen's novels too. I thought it could be interesting to check if Jane Austen used words related to uncertainty (given she deals with family and romantic relationships).
+
+I have used the uncertainty lexicon to explore Jane Austen's Emma. This is a first step to check if the analysis can work.
+
+```{r}
+tidy_books |>
+  filter(book == "Emma") |>
+  inner_join(l_unc) |>
+  count(word, sort = TRUE)
+```
+
+It seems to work. It is interesting to note that seven of these words are verbs. Among the other words there is one substantive, one adverb, and one adjective. However, the substantive ("doubt") could also be a verb.
+
+As it does seem to work, I look at all the novels at the same time.
+
+```{r}
+jane_austen_uncertainty <- tidy_books |>
+  inner_join(get_sentiments("loughran")) |>
+  count(book, index = linenumber %/% 80, sentiment) |>
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) |> 
+  mutate(sentiment = positive - negative)
+```
+
+There is an error message (as it was the case when trying to reproduce the results from chapter 2. However, it does not seem to affect the constructions of the following graphs.
+
+```{r}
+ggplot(jane_austen_uncertainty, aes(index, sentiment, fill = book)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~book, ncol = 2, scales = "free_x")
+```
+
+There are many instances of words related to uncertainty on the negative side in all six novels. In particular, "Negative uncertainty" appears towards, but just before, the end. This is particularly the case in Mansfield Park.
+
+Moreover, in all then there seem to be "early crises" with a lot of negative uncertainty related words: Emma (around 50), Mansfield Park, (post 50 and post 100), Pride and Prejudice (=\~ 80 and 120).
+
+Finally, in Sense and Sensibility there are longer stretches of "Negative uncertainty" than in the other novels.
+
+It would be interesting to explore if this is any way related to the particular times in which they were written.
