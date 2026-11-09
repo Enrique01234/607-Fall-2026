@@ -1,0 +1,180 @@
+---
+title: "607 Week 10 B only one question"
+author: "Enrique Delamonica"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+```
+
+## Preliminaries
+
+The libraries expected to be used are downloaded.
+
+```{r}
+library(tidyverse)
+library(jsonlite)
+library(repurrrsive)
+```
+
+These are the questions I set out to explore:
+
+1)  List those who won more than once
+
+2)  Filter men and women. Calculate the proportion of women and men winners
+
+3)  Compare the proportion of men and women winners in economics against all the other disciplines combined.
+
+4)  Filter and combine winners by science and by continent of birth. I am thinking of continent rather than country because I would like to create a table and with many countries, it will be difficult to read.
+
+### The data
+
+For this exercise data had to be requested from the Nobel Prize organization developer API. I was able to download the data and uploaded it in GitHub. From there I was able to retrieve them in R.
+
+The Nobel Prize organization developer API provides two endpoints I have used both. I have explored their nested structure.
+
+```{r}
+Winners<- read_json("https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/Laurates2.json", simplifyVector = TRUE)
+```
+
+```{r}
+NobelWinners<- read_json("https://raw.githubusercontent.com/Enrique01234/607-Fall-2026/refs/heads/main/NobelWinners.json", simplifyVector = TRUE)
+```
+
+```{r}
+##Winners
+```
+
+```{r}
+##NobelWinners
+```
+
+I started with the data frame "Winners". I selected each winner's ID to start creating a data frame (Winners_id) to use for my analysis.
+
+At this point I realized I did not have all the winners. I have tried several times to go back to the Nobel Prize API and retrieve all of them. I did manage to do so every time. However, when converting it to a JSON file, it got truncated every time, Nevertheless, I decided to continue with the exercise with a smaller set of winners (which hampered some of the questions I wanted to explore).
+
+```{r}
+Winners_id<-Winners$laureates|>
+  select(id)
+```
+
+```{r}
+Winners_id
+```
+
+The, I added some of the other variables I am interested in exploring.
+
+```{r}
+Winners_id<-Winners$laureates|>
+  select(id, fileName, gender)
+```
+
+```{r}
+Winners_id
+```
+
+Selecting these variables was rather straightforward. Selecting the continent the winners are from was more difficult, given the nested structure. So I created a different data frame (Winners_loc).
+
+```{r}
+Winners_loc<-Winners$laureates$birth$place$continent|>
+    select(en)
+```
+
+```{r}
+Winners_loc
+```
+
+In order to be able to join these two data frames, I created a new variable (newid) in each data frame.
+
+```{r}
+Winners_loc$newid <- 1:nrow(Winners_loc)
+```
+
+```{r}
+Winners_id$newid <- 1:nrow(Winners_id)
+```
+
+Then I created a new data frame (Winners_idloc), basically replicating (Winners_id). to be used for joining the two data frames.
+
+```{r}
+Winners_idloc<- Winners_id
+```
+
+I did a simple inner-join.
+
+```{r}
+Winners_idloc<- Winners_idloc|> 
+  inner_join(Winners_loc)
+```
+
+As the categories (sciences) for each winner were deeply nested in the data frame Winners (at least for me), I found it easier to retrieve them from the NobelWinners data frame.
+
+```{r}
+Winners_cat<-NobelWinners$nobelPrizes$category|>
+  select(en)
+```
+
+```{r}
+Winners_cat
+```
+
+However, these 25 entries are not the same as the 25 in the other data frame Thus, I cannot join them.
+
+I know they are not the same because, when analyzing the structure, I can see the names are different.
+
+I have also tried unnesting from the Winners data frame.
+
+```{r}
+Categories<-Winners
+```
+
+```{r}
+Categories2<-tibble(tounnest = Categories)
+```
+
+```{r}
+Categories2 |> unnest_wider(tounnest)
+```
+
+The list with the categories is there. I just could not find a way to retrieve it.
+
+## The One Result
+
+There are famous cases of persons who won more than one Nobel Prize (e.g. Marie Curie). However, I have used a truncated data set (he first 25 winners with first name starting with A). Thus, I did not find any repeat winner. I could not answer two of the remaining questions.
+
+I could only answer (partially, as I had only 25 winners), the question about the proportion of women and men winners.
+
+Grouping these winners by male and female is simple. Counting them and producing a bar graph to show them is also easy.
+
+```{r}
+Winners_idloc|>
+  group_by(gender)|>
+  count()
+```
+
+```{r}
+ggplot(Winners_idloc, aes(x = gender)) + 
+  geom_bar()
+```
+
+Identifying specifically the female winner is also easy.
+
+```{r}
+Winners_f<- Winners_idloc|>
+  filter(gender == "female")
+```
+
+```{r}
+Winners_f
+```
+
+Besides the count, the proportions of male and female winners can also be calculated.
+
+```{r}
+Winners_idloc |>
+  group_by(gender) |>
+  summarise(n = n()) |>
+  mutate(freq = n / sum(n))
+```
